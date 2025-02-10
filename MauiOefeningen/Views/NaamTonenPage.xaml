@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOefeningen.Views.NaamTonenPage"
+             Title="NaamTonen">
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout >
+            
+            <Label 
+                Text="Geef een naam in: "
+                />
+            <Entry Placeholder="Naam" Margin="5" ></Entry>
+
+       
+            
+           
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout >
+            <Label 
+         Text="Geef een getal in: "></Label>
+            <Entry Placeholder="Getal" ></Entry>
+
+
+       
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout 
+           Margin="5" 
+            >
+            <Button 
+     Text="Naam tonen"></Button>
+            <Button Text="Getal tonen" ></Button>
+            
+        </HorizontalStackLayout>
+
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mauiIntroductie.Views.FotoPage"
+             Title="FotoPage">
+    <ScrollView>
+        <VerticalStackLayout Margin="10,0">
+            <HorizontalStackLayout>
+                <Label Text="Hoogte:" VerticalOptions="Center" Margin="5,0"/>
+                <Label Text="Waarde" VerticalOptions="Center" Margin="0,0,5,0"/>
+                <Stepper Increment="10" Minimum="100" Maximum="600" Value="100"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Breedte:" VerticalOptions="Center" Margin="5,0"/>
+                <Label Text="Waarde" VerticalOptions="Center" Margin="0,0,5,0"/>
+                <Slider Minimum="100" Maximum="1000" WidthRequest="300" Value="100"/>
+            </HorizontalStackLayout>
+
+            <Image Source="landscape_tree.jpg"                          
+                   HeightRequest="100"
+                   WidthRequest="100"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
