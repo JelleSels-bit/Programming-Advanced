@@ -5,11 +5,12 @@
              Title="NaamTonen">
     <VerticalStackLayout>
 
-        <HorizontalStackLayout >
+        <HorizontalStackLayout Spacing="0" >
             
             <Label 
-                Text="Geef een naam in: "
+                Text="Geef een naam in: " Padding="15"
                 />
+            
             <Entry Placeholder="Naam" Margin="5" ></Entry>
 
        
@@ -17,24 +18,26 @@
            
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout >
+        <HorizontalStackLayout Spacing="5" >
             <Label 
-         Text="Geef een getal in: "></Label>
-            <Entry Placeholder="Getal" ></Entry>
+         Text="Geef een getal in: "  Padding="15"></Label>
+            <Entry Placeholder="Getal" Margin="5" ></Entry>
 
 
        
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout 
-           Margin="5" 
+        <HorizontalStackLayout  Spacing="10"
+           Margin="10" 
             >
-            <Button 
-     Text="Naam tonen"></Button>
+            <Button Text="Naam tonen" ></Button>
             <Button Text="Getal tonen" ></Button>
-            
+
+
         </HorizontalStackLayout>
 
-        
+        <HorizontalStackLayout>
+            <Label Text="resultaat" Padding="10" ></Label>
+        </HorizontalStackLayout> 
     </VerticalStackLayout>
 </ContentPage>

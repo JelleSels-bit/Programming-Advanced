@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MauiOefeningen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5cd89cce2e80e46c9ba697e4f8f7d5b85dd14813")]
 [assembly: System.Reflection.AssemblyProductAttribute("MauiOefeningen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiOefeningen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Graduaat programmeren\\trim3\\advanced\\MauiOefeningen\\MauiOefeningen.csproj": {}
+    "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\MauiOefeningen\\MauiOefeningen.csproj": {}
   },
   "projects": {
-    "C:\\Graduaat programmeren\\trim3\\advanced\\MauiOefeningen\\MauiOefeningen.csproj": {
+    "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\MauiOefeningen\\MauiOefeningen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Graduaat programmeren\\trim3\\advanced\\MauiOefeningen\\MauiOefeningen.csproj",
+        "projectUniqueName": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\MauiOefeningen\\MauiOefeningen.csproj",
         "projectName": "MauiOefeningen",
-        "projectPath": "C:\\Graduaat programmeren\\trim3\\advanced\\MauiOefeningen\\MauiOefeningen.csproj",
-        "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-        "outputPath": "C:\\Graduaat programmeren\\trim3\\advanced\\MauiOefeningen\\obj\\",
+        "projectPath": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\MauiOefeningen\\MauiOefeningen.csproj",
+        "packagesPath": "C:\\Users\\jelle\\.nuget\\packages\\",
+        "outputPath": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\MauiOefeningen\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,1 +1,1 @@
-C:\Graduaat programmeren\trim3\advanced\MauiOefeningen\MauiOefeningen.csproj;x64
+C:\Graduaat Programmeren\trim 3\Programming-Advanced\MauiOefeningen\MauiOefeningen.csproj;x64

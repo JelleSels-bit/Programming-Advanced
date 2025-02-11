@@ -17,4 +17,14 @@
     ContentTemplate="{DataTemplate Views:NaamTonenPage}"
     Route="NaamTonenPage" />
 
+    <ShellContent
+    Title="VakPage"
+    ContentTemplate="{DataTemplate Views:VakPage}"
+    Route="VakPage" />
+
+    <ShellContent
+    Title="AfbeeldingenPage"
+    ContentTemplate="{DataTemplate Views:AfbeeldingenPage}"
+    Route="AfbeeldingenPage" />
+
 </Shell>
