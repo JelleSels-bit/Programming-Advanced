@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiOefeningen.Views.NaamTonenPage"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             x:DataType="viewmodel:NaamTonenViewModel"
              Title="NaamTonen">
     <VerticalStackLayout>
 
@@ -11,7 +13,7 @@
                 Text="Geef een naam in: " Padding="15"
                 />
             
-            <Entry Placeholder="Naam" Margin="5" ></Entry>
+            <Entry Placeholder="Naam" Margin="5" Text="{Binding Naam }" ></Entry>
 
        
             
@@ -20,8 +22,8 @@
 
         <HorizontalStackLayout Spacing="5" >
             <Label 
-         Text="Geef een getal in: "  Padding="15"></Label>
-            <Entry Placeholder="Getal" Margin="5" ></Entry>
+         Text="Geef een getal in: "   Padding="15"></Label>
+            <Entry Placeholder="Getal" Text="{Binding Getal}" Margin="5" ></Entry>
 
 
        
@@ -30,14 +32,15 @@
         <HorizontalStackLayout  Spacing="10"
            Margin="10" 
             >
-            <Button Text="Naam tonen" ></Button>
-            <Button Text="Getal tonen" ></Button>
+            <Button Text="Naam tonen"  Command="{Binding AantalKeerCommand}" ></Button>
+            <Button Text="Resultaat leegmaken " Command="{Binding LeegmakenCommand}" ></Button>
 
-
+   
         </HorizontalStackLayout>
 
         <HorizontalStackLayout>
-            <Label Text="resultaat" Padding="10" ></Label>
+            <Label Text="{Binding UitKomst}"  Padding="10" ></Label>
+         
         </HorizontalStackLayout> 
     </VerticalStackLayout>
 </ContentPage>

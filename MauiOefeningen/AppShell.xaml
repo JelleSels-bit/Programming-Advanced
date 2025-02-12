@@ -12,6 +12,11 @@
         ContentTemplate="{DataTemplate Views:MainPage}"
         Route="MainPage" />
 
+    <!--<ShellContent
+     Title="LabelsPage"
+     ContentTemplate="{DataTemplate Views:LabelsPage}"
+     Route="LabelsPage" />-->
+
     <ShellContent
     Title="Naamtonen"
     ContentTemplate="{DataTemplate Views:NaamTonenPage}"
@@ -26,5 +31,10 @@
     Title="AfbeeldingenPage"
     ContentTemplate="{DataTemplate Views:AfbeeldingenPage}"
     Route="AfbeeldingenPage" />
+
+    <!--<ShellContent
+    Title="PersoonPage"
+    ContentTemplate="{DataTemplate Views:PersoonPage}"
+    Route="PersoonPage" />-->
 
 </Shell>
