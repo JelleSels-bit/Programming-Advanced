@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             x:DataType="viewmodel:VakViewModel"
              x:Class="MauiOefeningen.Views.VakPage"
+             
              Title="Vak">
     <VerticalStackLayout>
         <Label 
@@ -11,49 +14,51 @@
         <Image Source="dotnet_bot.png" HeightRequest="100" HorizontalOptions="Start" />
 
         <HorizontalStackLayout>
-            <Entry Placeholder="voornaam" WidthRequest="200" Margin="10,0,0,0" />
-            <Entry Placeholder="naam" WidthRequest="500" />
+            <Entry Placeholder="voornaam" Text="{Binding Voornaam}" WidthRequest="200" Margin="10,0,0,0" />
+            <Entry Placeholder="naam" Text="{Binding Achternaam}" WidthRequest="500" />
             
         </HorizontalStackLayout>
 
         <HorizontalStackLayout>
-            <Entry Placeholder="Campus" WidthRequest="700" Margin="10,0,0,0" ></Entry>
+            <Entry Placeholder="Campus" Text="{Binding Campus}" WidthRequest="700" Margin="10,0,0,0" ></Entry>
             
         </HorizontalStackLayout>
 
         <HorizontalStackLayout Margin="10,25,0,0">
 
             <Label Text="Vast lokaal?" > </Label>
-            <RadioButton Margin="10,0,0,0" Padding="0" ></RadioButton>
-            <Entry Placeholder="Lokaalnr" Keyboard="Numeric" WidthRequest="75"></Entry>
+            <CheckBox Margin="10,0,0,0" ></CheckBox>
+            <Entry Placeholder="Lokaalnr" Text="{Binding Lokaal}" Keyboard="Numeric" WidthRequest="75"></Entry>
             
         </HorizontalStackLayout>
 
         <HorizontalStackLayout Margin="10,20,0,0">
-            
-            <Label Text="Datum eerste les: " Margin="0,0,5,0"></Label>
-            <DatePicker Date="01/01/2000" ></DatePicker>
+
+            <Label Text="Datum eerste les: " Margin="0,0,5,0" />
+            <DatePicker Date="{Binding Datum}" />
 
 
         </HorizontalStackLayout>
 
         <HorizontalStackLayout Margin="10,20,0,0" >
 
-            <Label Text="Hoeveel denk je te halen op dit vak?" ></Label>
-            <Label Text="15/20?" Margin="5,0,0,0" ></Label>
-            <Stepper  Maximum="20" Minimum="1" Increment="1" Margin="10,0,0,0"  ></Stepper>
-            
+            <Label Text="Hoeveel denk je te halen op dit vak?" />
+            <Label Text="{Binding Score}"  Margin="5,0,0,0" />
+            <Label Text="/20"/>
+            <Stepper  Maximum="20" Minimum="0" Increment="1" Margin="10,0,0,0" 
+          Value="{Binding Score, Mode=TwoWay}"   />
+
         </HorizontalStackLayout>
 
 
         <HorizontalStackLayout Margin="10,20,0,0" >
 
-            <Button Text="Opslaan" WidthRequest="125"></Button>
-            
+            <Button Text="Opslaan" Command="{Binding ResultaatTonenCommand}" WidthRequest="125" />
+
         </HorizontalStackLayout>
 
         <HorizontalStackLayout Margin="10,20,0,0" >
-            <Label Text="resultaat" ></Label>
+            <Label Text="{Binding Uitvoer}" />
         </HorizontalStackLayout>
       
         

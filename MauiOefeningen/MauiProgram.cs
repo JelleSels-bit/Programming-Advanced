@@ -26,6 +26,8 @@ namespace MauiOefeningen
             builder.Services.AddSingleton<LabelsPage>();
             builder.Services.AddSingleton<StackLayoutPage>();
             builder.Services.AddSingleton<NaamTonenPage>();
+            builder.Services.AddSingleton<VakPage>();
+            builder.Services.AddSingleton<AfbeeldingenPage>();
 
 
             //Viewmodel
@@ -33,6 +35,8 @@ namespace MauiOefeningen
             builder.Services.AddSingleton<LabelViewModel>();
             builder.Services.AddSingleton<StackLayoutViewModel>();
             builder.Services.AddSingleton<NaamTonenViewModel>();
+            builder.Services.AddSingleton<VakViewModel>();
+            builder.Services.AddSingleton<AfbeeldingViewModel>();
 
             return builder.Build();
         }
