@@ -23,12 +23,13 @@ namespace MauiOefeningen
 #endif
             //Views
             //builder.Services.AddSingleton<PersoonPage>();
-           
+            builder.Services.AddSingleton<VragenlijstPage>();
 
 
             //Viewmodel
             //builder.Services.AddSingleton<PersoonViewModel>();
-           
+            builder.Services.AddSingleton<VragenlijstViewModel>();
+                
            
 
             return builder.Build();

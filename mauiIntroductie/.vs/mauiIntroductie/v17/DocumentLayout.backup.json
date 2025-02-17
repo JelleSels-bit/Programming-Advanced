@@ -1,32 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\views\\fotopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:views\\fotopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\views\\stacklayoutpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:views\\stacklayoutpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\views\\labelpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:views\\labelpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|c:\\graduaat programmeren\\trim3\\advanced\\mauiintroductie\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{8A8A6F6E-7C88-4494-A2DB-739D4A2A2BB5}|mauiIntroductie.csproj|solutionrelative:views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Graduaat programmeren\\trim3\\Programming-Advanced\\mauiIntroductie\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,89 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FotoPage.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\FotoPage.xaml",
-              "RelativeDocumentMoniker": "Views\\FotoPage.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\FotoPage.xaml",
-              "RelativeToolTip": "Views\\FotoPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T09:45:43.046Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StackLayOutPage.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\StackLayOutPage.xaml",
-              "RelativeDocumentMoniker": "Views\\StackLayOutPage.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\StackLayOutPage.xaml",
-              "RelativeToolTip": "Views\\StackLayOutPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T09:33:01.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T08:53:31.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "homePage.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\homePage.xaml",
-              "RelativeDocumentMoniker": "Views\\homePage.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\homePage.xaml",
-              "RelativeToolTip": "Views\\homePage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T08:53:12.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LabelPage.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\LabelPage.xaml",
-              "RelativeDocumentMoniker": "Views\\LabelPage.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\Views\\LabelPage.xaml",
-              "RelativeToolTip": "Views\\LabelPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T08:45:17.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MainPage.xaml",
-              "ToolTip": "C:\\Graduaat programmeren\\trim3\\advanced\\mauiIntroductie\\MainPage.xaml",
-              "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-10T08:32:50.057Z",
-              "EditorCaption": ""
             }
           ]
         }

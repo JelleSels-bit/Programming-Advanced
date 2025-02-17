@@ -12,6 +12,11 @@
         ContentTemplate="{DataTemplate Views:MainPage}"
         Route="MainPage" />
 
+    <ShellContent
+    Title="Vragenlijst"
+    ContentTemplate="{DataTemplate Views:VragenlijstPage}"
+    Route="VragenlijstPage" />
+     
 
 
 </Shell>
