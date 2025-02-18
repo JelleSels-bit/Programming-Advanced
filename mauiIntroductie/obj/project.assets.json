@@ -33161,24 +33161,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jelle\\.nuget\\packages\\": {},
+    "C:\\Users\\jelle\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Graduaat programmeren\\trim3\\Programming-Advanced\\mauiIntroductie\\mauiIntroductie.csproj",
+      "projectUniqueName": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\mauiIntroductie\\mauiIntroductie.csproj",
       "projectName": "mauiIntroductie",
-      "projectPath": "C:\\Graduaat programmeren\\trim3\\Programming-Advanced\\mauiIntroductie\\mauiIntroductie.csproj",
-      "packagesPath": "C:\\Users\\Jelle\\.nuget\\packages\\",
-      "outputPath": "C:\\Graduaat programmeren\\trim3\\Programming-Advanced\\mauiIntroductie\\obj\\",
+      "projectPath": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\mauiIntroductie\\mauiIntroductie.csproj",
+      "packagesPath": "C:\\Users\\jelle\\.nuget\\packages\\",
+      "outputPath": "C:\\Graduaat Programmeren\\trim 3\\Programming-Advanced\\mauiIntroductie\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

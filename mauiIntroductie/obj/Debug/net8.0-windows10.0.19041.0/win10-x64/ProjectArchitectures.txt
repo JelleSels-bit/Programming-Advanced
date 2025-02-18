@@ -1,1 +1,1 @@
-C:\Graduaat programmeren\trim3\advanced\mauiIntroductie\mauiIntroductie.csproj;x64
+C:\Graduaat Programmeren\trim 3\Programming-Advanced\mauiIntroductie\mauiIntroductie.csproj;x64

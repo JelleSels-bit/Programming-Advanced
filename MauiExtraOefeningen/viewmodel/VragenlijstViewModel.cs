@@ -10,7 +10,7 @@ namespace MauiOefeningen.viewmodel
     public partial class VragenlijstViewModel : ObservableObject
     {
         [ObservableProperty]
-        string antwoordEten, antwoordDrinken,naam,uitkomst,eten,drinken,sporten;
+        string antwoordEten, antwoordDrinken,naam,uitkomst,eten;
 
         [ObservableProperty]
         bool isVisibleStackLayout;
@@ -30,8 +30,7 @@ namespace MauiOefeningen.viewmodel
             Uitkomst = string.Empty;
             Score = 0;
             Eten = string.Empty;
-            Drinken = string.Empty;
-            Sporten = string.Empty;
+          
     
         }
     [RelayCommand]
@@ -50,49 +49,47 @@ namespace MauiOefeningen.viewmodel
         [RelayCommand]
         public async void Controleren()
         {
-            if (string.IsNullOrWhiteSpace(AntwoordDrinken) || string.IsNullOrWhiteSpace(antwoordEten))
+            if (string.IsNullOrWhiteSpace(AntwoordDrinken) || string.IsNullOrWhiteSpace(AntwoordEten))
             {
                 await Shell.Current.DisplayAlert("Fout", "Maak een keuze bij alle vragen", "OK");
             }
-            
-            if (AntwoordEten.ToLower() == "ja")
-            {
-                Eten = "voldoende";
-                Score++;
-            }
-            else
-            {
-                Eten = "onvoldoende";
-            }
-            
-            if (AntwoordDrinken.ToLower() == "ja")
-            {
-                Drinken = "voldoende";
-                Score++;
-            }else
-            {
-                Drinken = "Onvoldoende";
-            }
-            if (slider >= 3)
-            {
-                Sporten = "Voldoende";
-                Score++;
-            }
-            else
-            {
-                Sporten = "Onvoldoende";
-            }
 
+            Score = 0;
+
+            if (AntwoordEten == "Ja") Score++;
+            if (AntwoordDrinken == "Ja") Score++;
+            if (Slider >= 3) Score++;
+
+      
             if (Score == 3)
             {
-                uitkomst = $"Je eet {Eten}, je drinkt {Drinken},je sport {Sporten}. Je bent in topvorm {Naam}";
+                Uitkomst = $"Super bezig {Naam}, Je leeft heel gezond!";
+            }
+            else if (Score == 2)
+            {
+                Uitkomst = $"Goed bezig {Naam}, maar er is ruimte voor verbetering!";
             }
             else
             {
-                uitkomst = $"Je eet {Eten}, je drinkt {Drinken},je sport {Sporten}. Eten,Drinke & sporten is belangrijk {Naam}";
+                Uitkomst = $"Probeer gezonder te leven {Naam}. Jij kan dit!";
             }
 
 
+        }
+
+        [RelayCommand]
+        public async void Herstarten()
+        {
+            Naam = string.Empty;
+            Score = 0;
+            AntwoordEten = string.Empty;
+            AntwoordDrinken = string.Empty;
+            Slider = 0;
+            Uitkomst = string.Empty;
+            IsVisibleStackLayout = false;
+            
+            Naam = await Shell.Current.DisplayPromptAsync("Naam ingeven", "Geef je naam ");
+            IsVisibleStackLayout = true;
 
         }
 

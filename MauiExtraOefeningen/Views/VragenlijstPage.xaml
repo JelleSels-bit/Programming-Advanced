@@ -9,36 +9,44 @@
     <VerticalStackLayout  IsVisible="{Binding IsVisibleStackLayout}">
 
         <Grid 
-            ColumnDefinitions="*,*"
-            RowDefinitions="*,*,*,*">
+            ColumnDefinitions="*,auto"
+            RowDefinitions="*,*,*,*,*,*">
 
 
-            <Label Grid.Row="0" Grid.Column="0" Text="Welkom " />
-            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Naam}" />
-            
-            <Label Text="Eet je gezond?" Grid.Row="1" Grid.Column="0" />
-            <Picker Grid.Row="1" Grid.Column="1" SelectedItem="{Binding AntwoordEten}">
+            <Label Grid.Row="0" Grid.Column="0" Margin="5,0,0,10" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="Welkom "  FontSize="Medium"/>
+                        <Span Text="{Binding Naam}" FontSize="Medium"  />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <Label Text="Eet je gezond?" Grid.Row="1" Margin="10,0,0,10" Grid.Column="0" />
+            <Picker Grid.Row="1" WidthRequest="200" HorizontalOptions="Start" Grid.Column="1" SelectedItem="{Binding AntwoordEten}" >
                 <Picker.Items>
                     <x:String>Ja</x:String>
                     <x:String>Nee</x:String>
                 </Picker.Items>
             </Picker>
 
-            <Label Grid.Row="2" Grid.Column="0" Text="Drink je voldoende?" />
-            <Picker Grid.Row="2" Grid.Column="1" SelectedItem="{Binding AntwoordDrinken}">
+            <Label Grid.Row="2" Grid.Column="0" Margin="10,0,0,10" Text="Drink je voldoende?" />
+            <Picker Grid.Row="2" WidthRequest="200" HorizontalOptions="Start" Grid.Column="1" SelectedItem="{Binding AntwoordDrinken}">
                 <Picker.Items>
                     <x:String>Ja</x:String>
                     <x:String>Nee</x:String>
                 </Picker.Items>
             </Picker>
 
-            <Label Text="Hoeveel dagen per week sport je?" Grid.Row="3" Grid.Column="0" />
-            <Slider Grid.Row="3" Grid.Column="1"/>
+            <Label Text="Hoeveel dagen per week sport je?" Margin="10,10,0,0" Grid.Row="3" Grid.Column="0" />
+            <Label Text="{Binding Slider}" Margin="0,10,0,0" Grid.Row="3" Grid.Column="1"  />
+            <Slider Grid.Row="3"  WidthRequest="250" Margin="20,10,0,0"  Minimum="1" Maximum="7" Value="{Binding Slider}" Grid.Column="1"/>
 
-            <Button Grid.Row="4" Command="{Binding ControlerenCommand}" Grid.Column="0" Text="Controleren" />
-            <Button Grid.Row="4" Grid.Column="1" Text="Herstarten" />
+            <Button Grid.Row="4" Margin="50,0,0,0" HorizontalOptions="Start" WidthRequest="250" Command="{Binding ControlerenCommand}" Grid.Column="0" Text="Controleren" />
+            <Button Grid.Row="4" WidthRequest="200" HorizontalOptions="Start" Command="{Binding HerstartenCommand}" Grid.Column="1" Text="Herstarten" />
 
-            <Label Text="{Binding Uitkomst}" />
+            <Label Margin="10,0,0,10" Grid.Row="5" Grid.Column="0" Text="{Binding Uitkomst}" />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
