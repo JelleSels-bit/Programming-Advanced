@@ -22,12 +22,19 @@ namespace MauiOefeningen
 
 #endif
             //Views
-            //builder.Services.AddSingleton<PersoonPage>();
+          
+            builder.Services.AddSingleton<NamenPage1>();
+            builder.Services.AddSingleton<WerknemerPage>();
+            builder.Services.AddSingleton<GetallenPage>();
 
 
 
             //Viewmodel
             //builder.Services.AddSingleton<PersoonViewModel>();
+            builder.Services.AddSingleton<NamenViewModel>();
+            builder.Services.AddSingleton<WerknemerViewModel>();
+            builder.Services.AddSingleton<GetallenViewModel>();
+
 
             return builder.Build();
         }

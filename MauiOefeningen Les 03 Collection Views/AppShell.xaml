@@ -13,10 +13,19 @@
         Route="/" />
 
     <ShellContent
-     Title="LabelsPage"
+     Title="GetallenPage"
      ContentTemplate="{DataTemplate Views:GetallenPage}"
      Route="GetallenPage" />
 
+    <ShellContent
+    Title="NamenPage1"
+    ContentTemplate="{DataTemplate Views:NamenPage1}"
+    Route="NamenPage1" />
+
+    <ShellContent
+    Title="WerknemerPage"
+    ContentTemplate="{DataTemplate Views:WerknemerPage}"
+    Route="WernemerPage" />
 
 
 </Shell>
