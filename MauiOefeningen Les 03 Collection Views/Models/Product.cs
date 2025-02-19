@@ -9,9 +9,9 @@ namespace MauiOefeningen.Models
     public class Product
     {
         public string ProductNaam { get; set; }
-        public int Prijs { get; set; }  
-        public int Aantal { get; set; } 
-        public int Totaal { get; set; }
+        public double Prijs { get; set; }  
+        public double Aantal { get; set; } 
+        public double Totaal { get; set; }
 
     }
 }

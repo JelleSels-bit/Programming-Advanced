@@ -26,6 +26,7 @@ namespace MauiOefeningen
             builder.Services.AddSingleton<NamenPage1>();
             builder.Services.AddSingleton<WerknemerPage>();
             builder.Services.AddSingleton<GetallenPage>();
+              builder.Services.AddSingleton<FactuurPage>();
 
 
 
@@ -34,6 +35,7 @@ namespace MauiOefeningen
             builder.Services.AddSingleton<NamenViewModel>();
             builder.Services.AddSingleton<WerknemerViewModel>();
             builder.Services.AddSingleton<GetallenViewModel>();
+            builder.Services.AddSingleton<FactuurViewModel>();
 
 
             return builder.Build();

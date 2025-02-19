@@ -14,7 +14,10 @@ namespace MauiOefeningen.viewmodel
         Product product;
 
         [ObservableProperty]
-        int totaal, subTotaal, eindTotaal,btw;
+        double subTotaal, eindTotaal,btw;
+
+        
+
 
         [ObservableProperty]
         ObservableCollection<Product> producten;
@@ -22,15 +25,32 @@ namespace MauiOefeningen.viewmodel
         public FactuurViewModel()
         {
             Product = new Product();
-            Totaal = 0;
             SubTotaal = 0;
             EindTotaal = 0;
-            producten = [];
+            Btw = 0;
+            Producten = [];
+            Title = "Factuur";
         }
 
         [RelayCommand]
         public void ProductToevoegen()
         {
+            Product.Totaal = Product.Aantal * Product.Prijs;
+            Producten.Add(Product);
+
+
+            SubTotaal = 0;
+            foreach (Product item in producten)
+            {
+                SubTotaal += item.Totaal;
+            }
+
+            SubTotaal = Math.Round(SubTotaal, 2);
+
+            Btw = Math.Round(SubTotaal * 0.21,2);
+            EindTotaal = Math.Round(SubTotaal + Btw,2);
+
+            Product = new Product();
 
         }
 

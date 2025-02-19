@@ -26,6 +26,11 @@
     Title="WerknemerPage"
     ContentTemplate="{DataTemplate Views:WerknemerPage}"
     Route="WernemerPage" />
+ 
+    <ShellContent
+    Title="FactuurPage"
+    ContentTemplate="{DataTemplate Views:FactuurPage}"
+    Route="FactuurPage" />
 
 
 </Shell>

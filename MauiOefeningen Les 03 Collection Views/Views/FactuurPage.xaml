@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOefeningen.Views.FactuurPage"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             xmlns:model="clr-namespace:MauiOefeningen.Models"
+             x:DataType="viewmodel:FactuurViewModel"
+             Title="{Binding Title}">
+
+
+    <VerticalStackLayout Spacing="20" Padding="20">
+
+
+        <Frame HasShadow="True" CornerRadius="5" Padding="10">
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="2*,1*,1*,Auto">
+              
+                <Label Text="Productnaam" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" VerticalOptions="Center"/>
+                <Label Text="Prijs" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" VerticalOptions="Center"/>
+                <Label Text="Aantal" Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
+
+                <Entry Grid.Row="1" Grid.Column="0" 
+                   Text="{Binding Product.ProductNaam}" 
+                   Placeholder="Productnaam" />
+                <Entry Grid.Row="1" Grid.Column="1" 
+                   Text="{Binding Product.Prijs}" 
+                   Placeholder="1" Keyboard="Numeric"/>
+                <Entry Grid.Row="1" Grid.Column="2" 
+                   Text="{Binding Product.Aantal}" 
+                   Placeholder="1" Keyboard="Numeric"/>
+                <Button Text="Product toevoegen" 
+                    Command="{Binding ProductToevoegenCommand}" 
+                    Grid.Row="1" Grid.Column="3" 
+                    Margin="10,0,0,0" />
+            </Grid>
+        </Frame>
+
+       
+        <Frame HasShadow="True" CornerRadius="5" Padding="10">
+            <CollectionView ItemsSource="{Binding Producten}" 
+                        SelectedItem="{Binding Product}" 
+                        SelectionMode="Single">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="2*,1*,1*,1*">
+                        <Label Text="Productnaam:" Grid.Column="0" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="Prijs:" Grid.Column="1" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="Aantal:" Grid.Column="2" FontAttributes="Bold" FontSize="Small"/>
+                        <Label Text="Totaal:" Grid.Column="3" FontAttributes="Bold" FontSize="Small"/>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Product">
+                        <Grid ColumnDefinitions="2*,1*,1*,1*">
+                            <Label Text="{Binding ProductNaam}" Grid.Column="0"/>
+                            <Label Text="{Binding Prijs}" Grid.Column="1"/>
+                            <Label Text="{Binding Aantal}" Grid.Column="2"/>
+                            <Label Text="{Binding Totaal}" Grid.Column="3"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+        <Frame HasShadow="True" CornerRadius="5" Padding="10">
+            <Grid RowSpacing="10" ColumnDefinitions="*,Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Subtotaal:" FontAttributes="Bold" Grid.Row="0"/>
+                <Label Text="{Binding SubTotaal}" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"/>
+
+                <Label Text="BTW:" FontAttributes="Bold" Grid.Row="1"/>
+                <Label Text="{Binding Btw}" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+
+                <Label Text="Eindtotaal:" FontAttributes="Bold" Grid.Row="2"/>
+                <Label Text="{Binding EindTotaal}" Grid.Row="2" Grid.Column="1" HorizontalOptions="End"/>
+            </Grid>
+        </Frame>
+
+    </VerticalStackLayout>
+
+   
+</ContentPage>
