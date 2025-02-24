@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MauiOefeningen.viewmodel"
+             x:DataType="viewModel:GetallenViewModel"
+             x:Class="MauiOefeningen.Views.GetallenPage"
+             
+             Title="{Binding Title}">
+    <VerticalStackLayout>
+        <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+
+            <Label Text="Geef een getal in " Grid.Row="1" Grid.Column="0" />
+            <Entry Placeholder="0" Grid.Row="1" Text="{Binding Invoer}" Grid.Column="1" WidthRequest="20" />
+        </Grid>
+
+        <Button Text="Getal toevoegen" Command="{Binding GetalToevoegenCommand}" WidthRequest="150" />
+
+        <CollectionView ItemsSource="{Binding Getallen}" >
+            <CollectionView.Header >
+                <Label Text="Rij:" FontSize="Medium"  />
+
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate >
+                <DataTemplate >
+                    <Label Text="{Binding }" />
+              
+                </DataTemplate>
+                                
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.Footer >
+                <StackLayout >
+                                        
+                <Label Text="{Binding Kleinste,StringFormat='Kleinste: {0}'}" />
+                <Label Text="{Binding Grootste,StringFormat='Grootste: {0}'}" />
+                </StackLayout>
+            </CollectionView.Footer>
+
+                       
+        </CollectionView>
+    </VerticalStackLayout>
+
+   
+
+</ContentPage>

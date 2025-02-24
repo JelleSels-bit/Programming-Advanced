@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:MauiOefeningen.viewmodel"
+             x:DataType="ViewModel:NamenViewModel"
+             x:Class="MauiOefeningen.Views.NamenPage1"
+             Title="{Binding Title}">
+    <!--Stap 2 Maak een View van het type contentpage xaml-->
+    <VerticalStackLayout>
+       <Entry Placeholder="Type hier een naam" Text="{Binding Naam}" />
+       <Button Command="{Binding NaamToevoegenCommand}" Text="Naam toevoegen" WidthRequest="150" />
+
+        <CollectionView ItemsSource="{Binding Naam}" EmptyView="Er zijn geen namen" SelectionMode="Single" SelectedItem="{Binding Naam}" >
+
+            <CollectionView.Header >
+                <Label Text="Namen" FontSize="Medium" />
+            
+            </CollectionView.Header>
+            
+            <CollectionView.ItemTemplate >
+                
+                <DataTemplate >
+                    <Label Text="{Binding Naam}" />
+
+                </DataTemplate>    
+                
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.Footer >
+                <Label Text="{Binding Namen.Count, StringFormat='Test'}" />
+
+            </CollectionView.Footer>
+        </CollectionView>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
