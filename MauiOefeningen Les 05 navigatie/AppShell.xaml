@@ -6,34 +6,46 @@
     xmlns:Views="clr-namespace:MauiOefeningen.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiOefeningen">
-    <!--<TabBar ></TabBar>--> <!--Kan op examen komen-->
-    <ShellContent
-        Title="MainPage"
-        ContentTemplate="{DataTemplate Views:MainPage}"
-        Route="/MainPage" />
-
-    <ShellContent
-     Title="GamePage"
-     ContentTemplate="{DataTemplate Views:GamePage}"
-     Route="GamePage" />
 
 
+    <TabBar>
+        <Tab Title="🏠 Home">
+            <ShellContent
+                Title="MainPage"
+                ContentTemplate="{DataTemplate Views:MainPage}"
+                Route="MainPage" />
 
-    <ShellContent
-    Title="WerknemerPage"
-    ContentTemplate="{DataTemplate Views:WerknemerPage}"
-    Route="WernemerPage" />
-
-    <ShellContent
-    Title="PersoonIngevenPage"
-    ContentTemplate="{DataTemplate Views:PersoonIngevenPage}"
-    Route="PersoonIngevenPage" />
-
-    <ShellContent
-    Title="PersonenTonenPage"
-    ContentTemplate="{DataTemplate Views:PersonenTonenPage}"
-    Route="PersonenTonenPage" />
+        </Tab>
 
 
+        <Tab Title="Getallen oefeningen">
+            <ShellContent
+            Title="Getallen 1"
+            ContentTemplate="{DataTemplate Views:GetallenDoorgeven1Page}"
+            Route="GetallenDoorgeven1Page" />
+
+            <ShellContent
+            Title="Getallen 2"
+            ContentTemplate="{DataTemplate Views:GetallenDoorgeven2Page}"
+            Route="GetallenDoorgeven2Page" />
+        </Tab>
+
+        <Tab Title="Personene oefening">
+            <ShellContent
+            Title="PersoonIngevenPage"
+            ContentTemplate="{DataTemplate Views:PersoonIngevenPage}"
+            Route="PersoonIngevenPage" />
+
+            <ShellContent
+            Title="PersonenTonenPage"
+            ContentTemplate="{DataTemplate Views:PersonenTonenPage}"
+            Route="PersonenTonenPage" />
+        </Tab>
+            
+        
+        
+        
+    </TabBar>
+    
 
 </Shell>

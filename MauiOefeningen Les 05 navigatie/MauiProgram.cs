@@ -25,10 +25,11 @@ namespace MauiOefeningen
             //Views
           
             builder.Services.AddSingleton<WerknemerPage>();
-            builder.Services.AddSingleton<GamePage>();
             builder.Services.AddSingleton<DetailPage>();
             builder.Services.AddSingleton<PersoonIngevenPage>();
             builder.Services.AddSingleton<PersonenTonenPage>();
+            builder.Services.AddSingleton<GetallenDoorgeven1Page>();
+            builder.Services.AddSingleton<GetallenDoorgeven2Page>();
 
 
 
@@ -36,11 +37,14 @@ namespace MauiOefeningen
             //builder.Services.AddSingleton<PersoonViewModel>();
         
             builder.Services.AddSingleton<WerknemerViewModel>();
-            builder.Services.AddSingleton<GameViewModel>();
             builder.Services.AddSingleton<DetailViewModel>();
             builder.Services.AddSingleton<PersonenIngevenViewModel>();
             builder.Services.AddSingleton<PersoonTonenViewModel>();
-            
+            builder.Services.AddSingleton<GetallenDoorGeven1ViewModel>();
+            builder.Services.AddSingleton<GetallenDoorGeven2ViewModel>();
+
+
+
 
             //Interfaces
             builder.Services.AddSingleton<IWerknemerRepository,WerknemerRepository>();

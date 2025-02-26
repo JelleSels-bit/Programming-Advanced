@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiOefeningen.Views.GetallenDoorgeven1Page"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             x:DataType="viewmodel:GetallenDoorGeven1ViewModel"
+             Title="GetallenDoorgeven1Page">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="GetallenDoorgeven1" FontSize="24" FontAttributes="Bold" />
+
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Getal 1:" FontSize="18"/>
+            <Label Text="{Binding Getal1}" FontSize="18" FontAttributes="Bold"/>
+            <Stepper Minimum="1" Increment="1"
+                     Value="{Binding Getal1, Mode=TwoWay}"/>
+        </HorizontalStackLayout>
+
+     
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Getal 2:" FontSize="18"/>
+            <Label Text="{Binding Getal2}" FontSize="18" FontAttributes="Bold"/>
+            <Stepper Minimum="1"  Increment="1"
+                     Value="{Binding Getal2, Mode=TwoWay}"/>
+        </HorizontalStackLayout>
+
+      
+        <Button Text="Doorgeven" 
+                Command="{Binding GeefGetalDoorCommand}" 
+                BackgroundColor="Purple" 
+                TextColor="White" 
+                CornerRadius="10"/>
+    </VerticalStackLayout>
+</ContentPage>
