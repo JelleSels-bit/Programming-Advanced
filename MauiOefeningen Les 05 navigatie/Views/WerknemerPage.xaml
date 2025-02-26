@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             xmlns:model="clr-namespace:MauiOefeningen.Models"
+             x:DataType="viewmodel:WerknemerViewModel"
+             x:Class="MauiOefeningen.Views.WerknemerPage"
+             BackgroundColor="Black"
+             Title="{Binding Title}">
+
+    <!--Hierboven kan je de achtergrond van een pagina aanpassen.-->
+    <!--BackgroundImageSource=""-->
+    <!--Stap 2 maak view-->
+    <VerticalStackLayout Margin="10">
+        <Entry Text="{Binding Werknemer.Id}" Placeholder="Geef een Id in" />
+        <Entry Text="{Binding Werknemer.Achternaam}" Placeholder="Geef een achternaam in" />
+        <Entry Text="{Binding Werknemer.Voornaam}" Placeholder="Geef een voornaam in" />
+        <HorizontalStackLayout>
+            <Label Text="Wat is de functie van de werknemer?" VerticalOptions="Center"/>
+            <Picker SelectedItem="{Binding Werknemer.Functie}"  ItemsSource="{Binding Functies} " WidthRequest="150" >
+                
+            </Picker>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Wat is de geboortedatum van de werknemer?" VerticalOptions="Center"/>
+            <DatePicker Date="{Binding Werknemer.Geboortedatum}"/>
+        </HorizontalStackLayout>
+        <Button Text="Werknemer toevoegen" Command="{Binding WerknemerToevoegenCommand}"/>
+        <Button Text="Details" Command="{Binding GoToDetailsCommand}" Margin="5,0,0,0" />
+        <CollectionView ItemsSource="{Binding Werknemers}" SelectedItem="{Binding Werknemer}" SelectionMode="Single">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="*,*,*,*,*">
+                    <Label Text="Id" Grid.Column="0" FontSize="Small"/>
+                    <Label Text="Naam" Grid.Column="1" FontSize="Small"/>
+                    <Label Text="Functie" Grid.Column="2" FontSize="Small"/>
+                    <Label Text="Geboortedatum" Grid.Column="3" FontSize="Small"/>
+                    <Label Text="In dienst sinds" Grid.Column="4" FontSize="Small"/>
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Werknemer">
+                    <Grid ColumnDefinitions="*,*,*,*,*">
+                        <Grid.GestureRecognizers>
+                            
+                            <TapGestureRecognizer Command="{Binding GoToDetailsCommand, Source={RelativeSource AncestorType={x:Type viewmodel:WerknemerViewModel}}}">
+                                
+                            </TapGestureRecognizer>
+
+                            <SwipeGestureRecognizer Command="{Binding VerwijderWerknemerCommand, Source={RelativeSource AncestorType={x:Type viewmodel:WerknemerViewModel}}}" />
+
+                        </Grid.GestureRecognizers>
+                        <Label Text="{Binding Id}" Grid.Column="0" />
+                        <Label Text="{Binding VolledigeNaam}" Grid.Column="1"/>
+                        <Label Text="{Binding Functie}" Grid.Column="2"/>
+                        <Label Text="{Binding Geboortedatum, StringFormat='{0:dd-MM-yyyy}'}" Grid.Column="3"/>
+                        <Label Text="{Binding InDienst, StringFormat='{0:dd-MM-yyyy}'}" Grid.Column="4"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Home" Command="{Binding GoToHomeCommand}" WidthRequest="150" BackgroundColor="Red" />
+        <Button Text="Terug" Command="{Binding GoBackCommand}" WidthRequest="150" BackgroundColor="Violet" />
+    </VerticalStackLayout>
+
+</ContentPage>

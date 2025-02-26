@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiOefeningen.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Views="clr-namespace:MauiOefeningen.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MauiOefeningen">
+    <!--<TabBar ></TabBar>--> <!--Kan op examen komen-->
+    <ShellContent
+        Title="MainPage"
+        ContentTemplate="{DataTemplate Views:MainPage}"
+        Route="/MainPage" />
+
+    <ShellContent
+     Title="GamePage"
+     ContentTemplate="{DataTemplate Views:GamePage}"
+     Route="GamePage" />
+
+
+
+    <ShellContent
+    Title="WerknemerPage"
+    ContentTemplate="{DataTemplate Views:WerknemerPage}"
+    Route="WernemerPage" />
+
+    <ShellContent
+    Title="PersoonIngevenPage"
+    ContentTemplate="{DataTemplate Views:PersoonIngevenPage}"
+    Route="PersoonIngevenPage" />
+
+    <ShellContent
+    Title="PersonenTonenPage"
+    ContentTemplate="{DataTemplate Views:PersonenTonenPage}"
+    Route="PersonenTonenPage" />
+
+
+
+</Shell>
