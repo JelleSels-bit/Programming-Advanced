@@ -3,12 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiOefeningen.Views.PersonenTonenPage"
              xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
+             xmlns:model="clr-namespace:MauiOefeningen.Models"
              x:DataType="viewmodel:PersoonTonenViewModel"
              Title="{Binding Title}">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+        
+        <CollectionView ItemsSource="{Binding Personen}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Persoon">
+                    <VerticalStackLayout Padding="5">
+                        <Label Text="{Binding Voornaam, StringFormat='Voornaam: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding GeboorteDatum, StringFormat='Geboorte datum: {0:dd/MM/yyyy}'}"/>
+                      
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label Text="{Binding Uitvoer}" />
     </VerticalStackLayout>
 </ContentPage>

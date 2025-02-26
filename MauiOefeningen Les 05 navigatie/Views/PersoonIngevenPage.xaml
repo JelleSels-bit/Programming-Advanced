@@ -5,46 +5,43 @@
              xmlns:viewmodel="clr-namespace:MauiOefeningen.viewmodel"
              x:DataType="viewmodel:PersonenIngevenViewModel"
              xmlns:model="clr-namespace:MauiOefeningen.Models"
-             Title="{Binding Title}">
-    <VerticalStackLayout>
-        <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*">
-            <Label Text="Voornaam: " Grid.Row="0" Grid.Column="0" />
-            <Entry Placeholder="Voornaam" Grid.Row="0" Grid.Column="1" Text="{Binding Persoon.Voornaam}" />
+             Title="Personen ingeven">
 
-            <Label Text="Geboorte datum" Grid.Row="1" Grid.Column="0" />
-            <Entry Placeholder="{Binding Persoon.GeboorteDatum}"  Text="{Binding Persoon.GeboorteDatum}" />
+    <VerticalStackLayout Padding="20" Spacing="10">
 
-            <Button Grid.Row="2" Grid.Column="0" Command="{Binding IngevenCommand}" Text="Ingeven" />
-            <Button Grid.Row="2" Grid.Column="1" Command="{Binding GoToPersonenTonenCommand }" Text="Tonen" Margin="10,0,0,0" />
+      
+        <Label Text="Personen ingeven" FontSize="Large" FontAttributes="Bold"/>
 
-            <CollectionView ItemsSource="{Binding Personen}">
-                <CollectionView.Header>
-                    <Grid ColumnDefinitions="*,*">
-                        <Label Text="Voornaam:" Grid.Row="0" FontSize="Small"/>
-                        <Label Text="Geboortedatum" Grid.Row="1" FontSize="Small"/>
-                    </Grid>
+      
+        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto" ColumnSpacing="10">
+            <Label Text="Voornaam:" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" WidthRequest="100"/>
+            <Entry Placeholder="Voornaam" Text="{Binding Persoon.Voornaam}" Grid.Row="0" Grid.Column="1" />
 
-                </CollectionView.Header>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Persoon">
-                        <Grid>
-                            
-                        <Label Text="{Binding Voornaam}" Grid.Row="0"/>
-                        <Label Text="{Binding GeboorteDatum}" Grid.Row="1" />
-                        
-                        </Grid>
-
-
-                    </DataTemplate>
-
-                </CollectionView.ItemTemplate>
-                
-            </CollectionView>
-
-
-
-
-
+            <Label Text="Geboortedatum:" Grid.Row="1" VerticalOptions="Center" Grid.Column="0"/>
+            <DatePicker Date="{Binding Persoon.GeboorteDatum}" Grid.Row="1" Grid.Column="1" />
         </Grid>
+
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Ingeven" Command="{Binding IngevenCommand}" 
+                    BackgroundColor="Purple" TextColor="White" 
+                    WidthRequest="120" CornerRadius="10"/>
+
+            <Button Text="Tonen" Command="{Binding GoToPersonenTonenCommand}" 
+                    BackgroundColor="Purple" TextColor="White"
+                    WidthRequest="120" CornerRadius="10"/>
+        </HorizontalStackLayout>
+
+
+        <CollectionView ItemsSource="{Binding Personen}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Persoon">
+                    <VerticalStackLayout Padding="5">
+                        <Label Text="{Binding Voornaam, StringFormat='Voornaam: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding GeboorteDatum, StringFormat='Geboorte datum: {0:dd/MM/yyyy}'}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
     </VerticalStackLayout>
 </ContentPage>

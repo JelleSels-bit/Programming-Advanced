@@ -26,7 +26,7 @@ namespace MauiOefeningen.viewmodel
         [RelayCommand]
         public void Ingeven()
         {
-            if (!string.IsNullOrWhiteSpace(Persoon.Voornaam) && personen.Contains(Persoon))
+            if (!string.IsNullOrWhiteSpace(Persoon.Voornaam) && !Personen.Contains(Persoon))
             {
                 Personen.Add(Persoon);
                 Persoon = new();

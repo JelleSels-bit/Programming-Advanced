@@ -57,7 +57,7 @@
                 <Entry Text="{Binding Game.Uitgever}"/>
             </HorizontalStackLayout>
         </StackLayout>
-        <HorizontalStackLayout Grid.Row="1" Grid.Column="1">
+        <HorizontalStackLayout Grid.Row="2" Grid.Column="1">
             <Button Text="Toevoegen" Command="{Binding gameToevoegenCommand}"/>
             <Button Text="Nieuw game" Command="{Binding nieuweGameCommand}" Margin="10,0"/>
         </HorizontalStackLayout>

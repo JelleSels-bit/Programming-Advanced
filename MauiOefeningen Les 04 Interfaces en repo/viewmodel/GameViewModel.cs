@@ -33,6 +33,8 @@ namespace MauiOefeningen.viewmodel
             {
                 Games.Add(Game);
             }
+            Game = new Game();
+
         }
 
         [RelayCommand]
