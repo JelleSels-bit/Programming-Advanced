@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:DeMol.ViewModels"
+             xmlns:model="clr-namespace:DeMol.Models"
+             x:DataType="viewmodel:VraagViewModel"
+             x:Class="DeMol.Views.VraagPage"
+             BackgroundColor="Beige"
+             Title = "{Binding Title}">
+        
+        <VerticalStackLayout Margin="10">
+            <StackLayout Margin="5" RadioButtonGroup.SelectedValue="{Binding Antwoord}"
+                         RadioButtonGroup.GroupName="Antwoord">
+                <Label Text="{Binding Vraag.Vraagtekst }" FontSize="Medium" Margin="0,10"/>
+                <Label Text="Selecteer een antwoord" FontSize="Small"/>
+                
+                <CollectionView ItemsSource="{Binding Deelnemers}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Deelnemer">
+                            <RadioButton FontSize="Small" Content="{Binding VolledigeNaam}" Value="{Binding Id}" GroupName="Antwoord"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            
+            <HorizontalStackLayout>
+                <Label Text="Pasvraag inzetten? "/>
+                <CheckBox IsChecked="false"/>
+            </HorizontalStackLayout>
+
+            <Button  Text="Volgende vraag" WidthRequest="200"/>
+
+            <Label Text="Je hebt alle vragen beantwoord."/>
+            <Button  Text="Terug naar de homepagina" WidthRequest="200"/>
+        
+            <Label Text="Alle deelnemers hebben de vragen ingevuld."/>
+            <Button  Text="Controleer de uitslag" WidthRequest="200"/>
+    </VerticalStackLayout>
+</ContentPage>
