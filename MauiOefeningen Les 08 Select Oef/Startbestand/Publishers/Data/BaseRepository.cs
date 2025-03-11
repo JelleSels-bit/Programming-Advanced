@@ -13,7 +13,7 @@ public abstract class BaseRepository
             ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionString");
 
         }
-        else if (computerName == "computerthuis")
+        else if (computerName == "Sels")
         {
             ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionStringDocker");
         }

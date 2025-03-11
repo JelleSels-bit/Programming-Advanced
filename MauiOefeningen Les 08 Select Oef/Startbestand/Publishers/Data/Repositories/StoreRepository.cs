@@ -58,7 +58,7 @@ namespace Publishers.Data.Repositories
             string sql = @"SELECT *";
             sql += " FROM Store";
             sql += " WHERE id = @Id ";
-            sql += " ORDER BY ASC";
+          
 
             var parameters = new { @Id = id};
             using (IDbConnection db = new SqlConnection(ConnectionString))

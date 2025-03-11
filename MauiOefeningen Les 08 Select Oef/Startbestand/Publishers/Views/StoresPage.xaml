@@ -4,12 +4,12 @@
     xmlns:models="clr-namespace:Publishers.Models"
     xmlns:viewmodels="clr-namespace:Publishers.ViewModels" x:DataType="viewmodels:StoresViewModel" Title="StoresPage">
     <Grid RowDefinitions="*" ColumnDefinitions="*, *">
-        <CollectionView ItemsSource="" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" SelectionMode="Single" EmptyView="No items to display">
+        <CollectionView ItemsSource="{Binding Stores}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" SelectionMode="Single" EmptyView="No items to display">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Store">
                     <VerticalStackLayout Padding="10">
-                        <Label Text="Naam komt hier" FontSize="20" />
-                        <Label Text="Adres komt hier" FontSize="16" />
+                        <Label Text="{Binding Name}" FontSize="20" />
+                        <Label Text="{Binding Address}" FontSize="16" />
                     </VerticalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -19,14 +19,14 @@
 
         <Grid RowSpacing="10" ColumnSpacing="10" RowDefinitions="auto,auto,auto,auto" ColumnDefinitions="*, auto" Grid.Row="0" Grid.Column="1">
             <Entry Text="{Binding State}" Placeholder="Naam" Grid.Row="0" Grid.Column="0" />
-            <Button Text="Ophalen via naam" Command="{Binding OphalenStoresViaStaatCommand}" Grid.Row="0" Grid.Column="1" IsEnabled="{Binding IsNotBusy}" />
+            <Button Text="Ophalen via naam" Command="{Binding OphalenStoresViaNaamCommand}" Grid.Row="0" Grid.Column="1" IsEnabled="{Binding IsNotBusy}" />
 
-            <Entry Placeholder="Staat" Grid.Row="1" Grid.Column="0" />
-            <Button Text="Ophalen via staat" Grid.Row="1" Grid.Column="1" IsEnabled="{Binding IsNotBusy}" />
+            <Entry Placeholder="Staat" Text="{Binding State}" Grid.Row="1" Grid.Column="0" />
+            <Button Text="Ophalen via staat" Grid.Row="1" Command="{Binding OphalenStoresViaStaatCommand}" Grid.Column="1" IsEnabled="{Binding IsNotBusy}" />
 
-            <Button Text="Ophalen via naam en staat" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" IsEnabled="{Binding IsNotBusy}" />
+            <Button Text="Ophalen via naam en staat" Command="{Binding OphalenStoresViaNaamEnStaatCommand}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" IsEnabled="{Binding IsNotBusy}" />
 
-            <Entry Placeholder="Id" Grid.Row="3" Grid.Column="0" />
+            <Entry Placeholder="Id" Text="{Binding Id}" Grid.Row="3" Grid.Column="0" />
             <Button Text="Ophalen via id" Grid.Row="3" Grid.Column="2" IsEnabled="{Binding IsNotBusy}" />
         </Grid>
     </Grid>
