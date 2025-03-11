@@ -7,12 +7,8 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiOefeningen">
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        
-        
-        
-        
-    
+
+    <TabBar>
         <Tab Title="🏠 Home">
             <ShellContent
                 Title="MainPage"
@@ -39,7 +35,7 @@
             Title="PersoonIngevenPage"
             ContentTemplate="{DataTemplate Views:PersoonIngevenPage}"
             Route="PersoonIngevenPage" />
-            
+
             <ShellContent
             Title="PersonenTonenPage"
             ContentTemplate="{DataTemplate Views:PersonenTonenPage}"
@@ -49,9 +45,7 @@
         
         
         
-  
-    
-    </FlyoutItem>
+    </TabBar>
     
 
 </Shell>

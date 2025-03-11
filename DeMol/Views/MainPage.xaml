@@ -5,23 +5,24 @@
              xmlns:viewmodel="clr-namespace:DeMol.ViewModels"
              xmlns:model="clr-namespace:DeMol.Models"
              x:DataType="viewmodel:MainPageViewModel"
-             BackgroundColor="Beige"
+             BackgroundColor="white"
              Title="{Binding Title}">
      
         <VerticalStackLayout>
         
-            <Label Text="De Mol" FontSize="100" HorizontalOptions="Center"/>
-            <Label Text="Selecteer je naam:" FontSize="Title" HorizontalOptions="Center" Margin="0,10,0,10"/>
+            <Label Text="De Mol" TextColor="Black" FontSize="100" HorizontalOptions="Center"/>
+            <Label Text="Selecteer je naam:" TextColor="Black" FontSize="Title" HorizontalOptions="Center" Margin="0,10,0,10"/>
             
-            <CollectionView ItemsSource="{Binding Deelnemers}" SelectionMode="Single" >
+            <CollectionView ItemsSource="{Binding Deelnemers}"  SelectionMode="Single" SelectedItem="{Binding Deelnemer, Mode=TwoWay}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Deelnemer">
-                            <Label Text="{Binding VolledigeNaam}" HorizontalTextAlignment="Center" FontSize="Large" />
+                            <Label Text="{Binding VolledigeNaam}" TextColor="Black" HorizontalTextAlignment="Center" FontSize="Large" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>
+           </CollectionView>
 
             <Button Text="Vragen beantwoorden" Command="{Binding VragenBeantwoordenCommand}" WidthRequest="200" Margin="0,10"/>
+            <Label Text="{Binding Deelnemer.VolledigeNaam}"> </Label>
         </VerticalStackLayout>
 
 </ContentPage>

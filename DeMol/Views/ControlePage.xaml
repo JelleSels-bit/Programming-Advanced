@@ -4,9 +4,12 @@
              xmlns:viewmodel="clr-namespace:DeMol.ViewModels"
              x:DataType="viewmodel:ControleViewModel"
              x:Class="DeMol.Views.ControlePage"
+             BackgroundColor="{Binding VeranderKleur}"
              Title="{Binding Title}">
+
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Entry Text="Naam" Placeholder="Geef een voornaam in"/>
-        <Button Text="Controleer" WidthRequest="200"/>
+
+        <Entry Text="{Binding Input}"  Placeholder="Geef een voornaam in"/>
+        <Button Text="Controleer" Command="{Binding ControleerPersoonCommand}" WidthRequest="200"/>
     </VerticalStackLayout>
 </ContentPage>

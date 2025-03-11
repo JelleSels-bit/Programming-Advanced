@@ -16,27 +16,22 @@ namespace DeMol.ViewModels
         }
 
         [RelayCommand]
-        public async void VragenBeantwoorden()
+        public async Task VragenBeantwoorden()
         {
-            if (Deelnemers == null && Deelnemer == null)
-            {
-                await Shell.Current.DisplayAlert("Fout", "Je moet een deelnemer selecteren of de lijst is leeg :)", "ok");
-            }
-            else
-            {
                 await Shell.Current.GoToAsync(nameof(VraagPage), true, new Dictionary<string, object>
                 {
                     {"Deelnemers",Deelnemers},
                     {"Deelnemer", Deelnemer}
                 });
-            }
-            
-            
 
-            
-                    
-            
-            
+
+
+
+
+
+
+
+
 
         }
         

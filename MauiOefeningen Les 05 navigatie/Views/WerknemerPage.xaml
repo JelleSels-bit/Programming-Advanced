@@ -17,7 +17,7 @@
         <Entry Text="{Binding Werknemer.Voornaam}" Placeholder="Geef een voornaam in" />
         <HorizontalStackLayout>
             <Label Text="Wat is de functie van de werknemer?" VerticalOptions="Center"/>
-            <Picker SelectedItem="{Binding Werknemer.Functie}"  ItemsSource="{Binding Functies} " WidthRequest="150" >
+            <Picker SelectedItem="{Binding Werknemer.Functie}"  ItemsSource="{Binding Functies}" WidthRequest="150" >
                 
             </Picker>
         </HorizontalStackLayout>
