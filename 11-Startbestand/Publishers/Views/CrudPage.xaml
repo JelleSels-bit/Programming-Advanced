@@ -40,10 +40,10 @@
             <Entry Placeholder="Achternaam" Text="{Binding SelectedEmployee.LastName}" />
             
             <Label Text="Job" />
-            <Picker  ItemsSource="{Binding Hier lijst van jobs}" SelectedItem="{Binding SelectedEmployee.Job}" ItemDisplayBinding="{Binding SelectedEmployee.Job}"  />
+            <Picker ItemsSource="{Binding Jobs}" SelectedItem="{Binding SelectedEmployee.Job}"  />
             
             <Label Text="Publisher" />
-            <Picker  ItemsSource="{Binding Hier lijst van publishers}" SelectedItem="{Binding SelectedEmployee.Publisher}" ItemDisplayBinding="{Binding SelectedEmployee.Publisher}" />
+            <Picker  ItemsSource="{Binding Publishers}" SelectedItem="{Binding SelectedEmployee.Publisher}" />
             
             <Label Text="Hire date" />
             <DatePicker Date="{Binding SelectedEmployee.HireDate}" />

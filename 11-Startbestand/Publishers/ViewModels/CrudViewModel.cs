@@ -13,17 +13,29 @@ namespace Publishers.ViewModels
         ObservableCollection<Employee> employees;
 
         [ObservableProperty]
+        ObservableCollection<Job> jobs;
+
+        [ObservableProperty]
+        ObservableCollection<Publisher> publishers;
+
+        [ObservableProperty]
         Employee selectedEmployee;
 
- 
-        private IEmployeesRepository _employeeRepository;
 
-        public CrudViewModel(IEmployeesRepository employeeRepository)
+        private IEmployeesRepository _employeeRepository;
+        private IJobsRepository _jobsRepository;
+        private IPublishersRepository _publishersRepository;
+
+        public CrudViewModel(IEmployeesRepository employeeRepository, IJobsRepository jobsRepository,IPublishersRepository publishersRepository)
         {
             _employeeRepository = employeeRepository;
+            _jobsRepository = jobsRepository;
+            _publishersRepository = publishersRepository;
 
             RefreshEmployees();
             SelectedEmployee = new Employee();
+            Jobs = new ObservableCollection<Job>(_jobsRepository.OphalenJobs());
+            Publishers = new ObservableCollection<Publisher>(_publishersRepository.OphalenPublishers());
 
         }
 
@@ -37,6 +49,7 @@ namespace Publishers.ViewModels
         [RelayCommand]
         public void Toevoegen()
         {
+            SelectedEmployee.Code = Guid.NewGuid().ToString().Substring(0, 8);
             var result = _employeeRepository.ToevoegenEmployee(SelectedEmployee);
 
             if (result)

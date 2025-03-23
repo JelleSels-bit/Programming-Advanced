@@ -6,16 +6,18 @@ public abstract class BaseRepository
 
     public BaseRepository()
     {
-        string computerName = Environment.MachineName;
 
-        if (computerName == "LAPTOP-RFQLL7A5")
-        {
-            ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionString");
+        ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionString");
+        //string computerName = Environment.MachineName;
 
-        }
-        else if (computerName == "Sels")
-        {
-            ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionStringDocker");
-        }
+        //if (computerName == "LAPTOP-RFQLL7A5")
+        //{
+            
+
+        //}
+        //else if (computerName == "Sels")
+        //{
+        //    ConnectionString = DatabaseConnection.Connectionstring("PublishersConnectionStringDocker");
+        //}
     }
 }

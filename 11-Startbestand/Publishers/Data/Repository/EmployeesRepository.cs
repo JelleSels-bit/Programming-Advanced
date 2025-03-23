@@ -94,8 +94,8 @@ namespace Publishers.Data.Repository
 
         public bool ToevoegenEmployee(Employee employee)
         {
-            string sql = @"INSERT INTO Publishers (code, firstName, lastName, jobId, publisherId, hireDate )
-               VALUES (@code, @firstName, @lastName, @jobId, @jobLevel, @publisherId, @hireDate)";
+            string sql = @"INSERT INTO Employee (code, firstName, lastName, jobId, publisherId, hireDate )
+               VALUES (@code, @firstName, @lastName, @jobId, @publisherId, @hireDate)";
 
             var parameters = new
             {
@@ -103,7 +103,6 @@ namespace Publishers.Data.Repository
                 firstName = employee.FirstName,
                 lastName = employee.LastName,
                 jobId = employee.JobId,
-                jobLevel = employee.JobLevel,
                 publisherId = employee.PublisherId,
                 hireDate = employee.HireDate
                 
@@ -117,8 +116,8 @@ namespace Publishers.Data.Repository
 
         public bool VerwijderenEmployee(int id)
         {
-            string sql = @"DELETE FROM Employee WHERE Id = @id;
-            DELETE FROM Orders WHERE Id = @id";
+            string sql = @"DELETE FROM Employee WHERE Id = @id";
+            
 
             using IDbConnection db = new SqlConnection(ConnectionString);
             var affectedRows = db.Execute(sql, new { id = id });
@@ -128,18 +127,22 @@ namespace Publishers.Data.Repository
 
         public bool WijzigenEmployee(Employee employee)
         {
-            string sql = @"UPDATE INTO Publishers (code, firstName, lastName, jobId, publisherId, hireDate )
-               VALUES (@code, @firstName, @lastName, @jobId, @jobLevel, @publisherId, @hireDate)";
+            var sql = @"UPDATE Employee
+                        SET firstName = @firstName,
+                            lastName = @lastName,
+                            hireDate = @hireDate,
+                            jobId = @jobId,
+                            publisherId = @publisherId
+                        WHERE id = @id";
 
             var parameters = new
             {
-                code = employee.Code,
-                firstName = employee.FirstName,
-                lastName = employee.LastName,
-                jobId = employee.JobId,
-                jobLevel = employee.JobLevel,
-                publisherId = employee.PublisherId,
-                hireDate = employee.HireDate
+                @firstName = employee.FirstName,
+                @lastName = employee.LastName,
+                @hireDate = employee.HireDate,
+                @jobId = employee.JobId,
+                @publisherId = employee.PublisherId,
+                @id = employee.Id
             };
 
             using IDbConnection db = new SqlConnection(ConnectionString);

@@ -31,11 +31,11 @@ namespace Publishers
             builder.Services.AddSingleton<CrudViewModel>();
 
             builder.Services.AddSingleton<IEmployeesRepository,EmployeesRepository>();
-            builder.Services.AddSingleton<StoresRepository>();
-            builder.Services.AddSingleton<PublishersRepository>();
-            builder.Services.AddSingleton<JobsRepository>();
-            builder.Services.AddSingleton<BooksRepository>();
-            builder.Services.AddSingleton<SalesRepository>();
+            builder.Services.AddSingleton<IStoresRepository,StoresRepository>();
+            builder.Services.AddSingleton<IPublishersRepository,PublishersRepository>();
+            builder.Services.AddSingleton<IJobsRepository,JobsRepository>();
+            builder.Services.AddSingleton<IBooksRepository,BooksRepository>();
+            builder.Services.AddSingleton<ISalesRepository,SalesRepository>();
 
             return builder.Build();
         }
