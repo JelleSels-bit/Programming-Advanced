@@ -10,5 +10,10 @@ namespace Publishers.Models
     {
         public Store Store { get; set; }
         public Book Book { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Store.Name} {Store.Address} {Book.VerkoopDatum} {Book.aantalBoek}";
+        }
     }
 }

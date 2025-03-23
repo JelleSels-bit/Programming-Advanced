@@ -21,5 +21,10 @@ namespace Publishers.Models
 
         public Publisher Publisher { get; set; }
         public Job Job { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName} {Publisher} {Job.Description}";
+        }
     }
 }

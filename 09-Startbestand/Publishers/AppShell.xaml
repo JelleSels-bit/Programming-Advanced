@@ -6,6 +6,8 @@
        Shell.FlyoutBehavior="Flyout"
        Title="Publishers">
 
+
+
     <ShellContent Title="Home"
                   ContentTemplate="{DataTemplate views:MainPage}"
                   Route="MainPage" />
@@ -15,4 +17,8 @@
     <ShellContent Title="Employees"
                   ContentTemplate="{DataTemplate views:EmployeesPage}"
                   Route="EmployeesPage" />
+    
+    <ShellContent Title="NavigationProperties"
+                  ContentTemplate="{DataTemplate views:NavigationPropertiesPage}"
+                  Route="NavigationPropertiesPage" />
 </Shell>

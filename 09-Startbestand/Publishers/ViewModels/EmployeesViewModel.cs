@@ -45,13 +45,13 @@ namespace Publishers.ViewModels
             Publishers = new ObservableCollection<Publisher>(_publishersRepository.OphalenPublishers());
         }
 
-        [RelayCommand]
-        public void AlleWerknemersOphalen()
-        {
-            IsBusy = true;
-            Employees = new ObservableCollection<Employee>(_employeesRepository.OphalenEmployees());
-            IsBusy = false;
-        }
+        //[RelayCommand]
+        //public void AlleWerknemersOphalen()
+        //{
+        //    IsBusy = true;
+        //    Employees = new ObservableCollection<Employee>(_employeesRepository.OphalenEmployees());
+        //    IsBusy = false;
+        //}
 
         [RelayCommand]
         public void WerknemersOphalenViaJob()

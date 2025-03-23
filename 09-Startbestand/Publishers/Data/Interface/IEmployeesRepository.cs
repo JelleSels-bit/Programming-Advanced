@@ -7,7 +7,7 @@ namespace Publishers.Data.Interface
 {
     public interface IEmployeesRepository
     {
-        public IEnumerable<Employee> OphalenEmployees();
+        public IEnumerable<Employee> OphalenEmployees(string publisher);
 
         public List<Employee> OphalenEmployeesViaHireDate(DateTime hiredate);
 

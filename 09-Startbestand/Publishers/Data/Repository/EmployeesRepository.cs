@@ -4,16 +4,31 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Publishers.Data.Repository
 {
     public class EmployeesRepository : BaseRepository, IEmployeesRepository
     {
-        public IEnumerable<Employee> OphalenEmployees()
+        public IEnumerable<Employee> OphalenEmployees(string publisher)
         {
-            string sql = "SELECT * FROM Employee ORDER BY lastName, firstName";
+            var sql = @"SELECT E.*, P.*, J.*
+                        FROM Employee E
+                        JOIN Publisher P ON E.publisherId = P.id
+                        JOIN Job J ON E.jobId = J.id
+                        WHERE P.name LIKE '%' + @publisher + '%'
+                        ORDER BY E.firstName, E.lastName";
+
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
-                return db.Query<Employee>(sql);
+                return db.Query<Employee, Publisher, Job, Employee>(
+                    sql,
+                    (employee, publisher, job) =>
+                    {
+                        employee.Job = job;
+                        employee.Publisher = publisher;
+                        return employee;
+                    },
+                    new { publisher = publisher }).ToList();
             }
         }
 

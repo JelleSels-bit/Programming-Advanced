@@ -1,5 +1,5 @@
-﻿using MauiApp1;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+
 
 namespace Publishers
 {
@@ -33,6 +33,7 @@ namespace Publishers
             builder.Services.AddSingleton<StoresRepository>();
             builder.Services.AddSingleton<PublishersRepository>();
             builder.Services.AddSingleton<JobsRepository>();
+            
 
             return builder.Build();
         }

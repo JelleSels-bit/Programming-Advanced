@@ -1,9 +1,10 @@
-namespace MauiApp1;
+namespace Publishers.Views;
 
 public partial class NavigationPropertiesPage : ContentPage
 {
-	public NavigationPropertiesPage()
+	public NavigationPropertiesPage(NavigationPropertiesViewModel vm)
 	{
-		InitializeComponent();
+        InitializeComponent();
+        BindingContext = vm;
 	}
 }

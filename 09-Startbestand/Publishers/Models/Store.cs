@@ -10,4 +10,9 @@ public class Store
     public string Zip { get; set; }
 
     public List<Sale> Sales { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Name} {Address} {Zip} {City}";
+    }
 }
