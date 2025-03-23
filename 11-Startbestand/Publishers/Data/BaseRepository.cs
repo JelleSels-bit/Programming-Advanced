@@ -1,6 +1,4 @@
-﻿using System.Reflection.PortableExecutable;
-
-namespace Publishers.Data;
+﻿namespace Publishers.Data;
 
 public abstract class BaseRepository
 {

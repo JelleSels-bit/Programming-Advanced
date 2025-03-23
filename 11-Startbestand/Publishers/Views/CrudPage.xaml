@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Publishers.Views.CrudPage"
+             xmlns:models="clr-namespace:Publishers.Models"
+             xmlns:viewmodels="clr-namespace:Publishers.ViewModels"
+             x:DataType="viewmodels:CrudViewModel"
+             Title="CrudPage">
+    <Grid ColumnDefinitions="*,*"
+          RowDefinitions="*">
+        <CollectionView Grid.Row="0"
+                        Grid.Column="0"
+                        SelectionMode="Single"
+                        EmptyView="No items to display"
+                        ItemsSource="{Binding Employees}"
+                        SelectedItem="{Binding SelectedEmployee}">
+                        
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Employee">
+                    <VerticalStackLayout Padding="10">
+                        <Label Text="{Binding }"
+                               FontSize="20" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ScrollView Grid.Column="1" Grid.Row="0">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Id" />
+            <Entry IsEnabled="False"
+                   Placeholder="Id"
+                   Text="."/>
+            
+            <Label Text="Voornaam" />
+            <Entry Placeholder="Voornaam" Text="{Binding SelectedEmployee.FirstName}" />
+            
+            <Label Text="Achternaam" />
+            <Entry Placeholder="Achternaam" Text="{Binding SelectedEmployee.LastName}" />
+            
+            <Label Text="Job" />
+            <Picker  ItemsSource="{Binding Hier lijst van jobs}" SelectedItem="{Binding SelectedEmployee.Job}" ItemDisplayBinding="{Binding SelectedEmployee.Job}"  />
+            
+            <Label Text="Publisher" />
+            <Picker  ItemsSource="{Binding Hier lijst van publishers}" SelectedItem="{Binding SelectedEmployee.Publisher}" ItemDisplayBinding="{Binding SelectedEmployee.Publisher}" />
+            
+            <Label Text="Hire date" />
+            <DatePicker Date="{Binding SelectedEmployee.HireDate}" />
+
+            <Button Text="Add employee" Command="{Binding ToevoegenCommand}" />
+            <Button Text="Update employee" Command="{Binding WijzigenCommand}" />
+            <Button Text="Delete employee" Command="{Binding VerwijderenCommand}" />
+            <Button Text="Clear fields" Command="{Binding DeselecterenCommand}" />
+        </VerticalStackLayout>
+            
+        </ScrollView>
+    </Grid>
+</ContentPage>

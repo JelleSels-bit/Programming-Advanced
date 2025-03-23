@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Orders.Views.OrdersCrudPage"
+    xmlns:viewmodels="clr-namespace:Orders.ViewModels"
+    xmlns:models="clr-namespace:Orders.Models" x:DataType="viewmodels:OrdersCrudViewModel" Title="OrdersCrudPage">
+    <Grid RowDefinitions="*" ColumnDefinitions="*, *">
+        <CollectionView Grid.Row="0" Grid.Column="0" SelectionMode="Single" ItemsSource="{Binding Orders}" EmptyView="No items to display" SelectedItem="{Binding SelectedOrder}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Order">
+                    <VerticalStackLayout Padding="10">
+                        <Label FontSize="20">
+                            <Label.Text>
+                                <MultiBinding StringFormat="Order met ID: {0}">
+                                    <Binding Path="Id" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                        <Label FontSize="16">
+                            <Label.Text>
+                                <MultiBinding StringFormat="Verwerkt door {0} | Klant: {1}">
+                                    <Binding Path="Werknemer" />
+                                    <Binding Path="Klant" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill" VerticalOptions="Center" Color="{StaticResource Primary}" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+        <ScrollView Grid.Row="0" Grid.Column="1">
+            
+        <VerticalStackLayout Spacing="10">
+            <Label Text="{Binding ActieLabel}" FontSize="Header"/>
+            <Label Text="Kies een klant" />
+            <Picker ItemsSource="{Binding Klanten}" SelectedItem="{Binding SelectedOrder.Klant}" ItemDisplayBinding="{Binding Bedrijf}" />
+          
+            <Label Text="Kies een werknemer" />
+            <Picker ItemsSource="{Binding Werknemers}" SelectedItem="{Binding SelectedOrder.Werknemer}" ItemDisplayBinding="{Binding VolledigeNaam}" />
+            <Label Text="Selecteer een orderdatum" />
+            <DatePicker Date="{Binding SelectedOrder.Orderdatum}"/>
+            <Label Text="Verzendadres" />
+            <Entry Placeholder="Verzendadres" Text="{Binding SelectedOrder.Verzendadres}" />
+            <Label Text="Verzendplaats" />
+            <Entry Placeholder="Verzendplaats" Text="{Binding SelectedOrder.Verzendplaats}" />
+            <Label Text="Verzendpostcode" />
+            <Entry Placeholder="Verzendpostcode" Text="{Binding SelectedOrder.Verzendpostcode}" />
+            <Label Text="Verzendland" />
+            <Entry Placeholder="Verzendland" Text="{Binding SelectedOrder.Verzendland}" />
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Toevoegen" Command="{Binding ToevoegenCommand}"/>
+                <Button Text="Wijzigen" Command="{Binding WijzigenCommand}"/>
+                <Button Text="Verwijderen" Command="{Binding VerwijderenCommand}"/>
+                <Button Text="Deselecteren" Command="{Binding DeselecterenCommand}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        </ScrollView>
+
+
+
+    </Grid>
+</ContentPage>

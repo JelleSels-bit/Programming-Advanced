@@ -1,0 +1,5 @@
+view / viewmodel / model krijgen we al.
+interfaces en repo's moeten we zelf invullen. 
+krijgen db script. 
+
+niet vergeten bij het examen: equals methode overschrijven!!(nodig voor picker)
