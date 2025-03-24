@@ -1,9 +1,0 @@
-global using Publishers.Views;
-global using Publishers.ViewModels;
-global using CommunityToolkit.Mvvm.ComponentModel;
-global using CommunityToolkit.Mvvm.Input;
-global using System.Collections.ObjectModel;
-global using Dapper;
-global using Microsoft.Data.SqlClient;
-global using System.Data;
-global using System.Configuration;
