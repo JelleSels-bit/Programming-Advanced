@@ -70,12 +70,13 @@ namespace Publishers.Data.Repository
             }
         }
 
-        public IEnumerable<Employee> OphalenEmployeesMetUitgeverEnJob()
+        public IEnumerable<Employee> OphalenEmployeesMetUitgeverEnJob(string publisher)
         {
             var sql = @"SELECT E.*, P.*, J.*
                         FROM Employee E
                         JOIN Publisher P ON E.publisherId = P.id
                         JOIN Job J ON E.jobId = J.id
+                        WHERE P.name LIKE '%' + @publisher + '%'
                         ORDER BY E.firstName, E.lastName";
 
             using (IDbConnection db = new SqlConnection(ConnectionString))
@@ -87,74 +88,9 @@ namespace Publishers.Data.Repository
                         employee.Job = job;
                         employee.Publisher = publisher;
                         return employee;
-                    }
-                    ).ToList();
+                    },
+                    new { publisher = publisher }).ToList();
             }
         }
-
-        public bool ToevoegenEmployee(Employee employee)
-        {
-            string sql = @"INSERT INTO Employee (firstname, lastname, jobId, publisherId, hireDate, code)
-               VALUES (@firstname, @lastname, @jobId, @publisherId, @hireDate, @code)";
-
-            var parameters = new
-            {
-                firstname = employee.FirstName,
-                lastname = employee.LastName,
-                jobId = employee.Job.Id,
-                publisherId = employee.Publisher.Id,
-                hireDate = employee.HireDate,
-                code = employee.Code
-            };
-
-            using IDbConnection db = new SqlConnection(ConnectionString);
-            var affectedRows = db.Execute(sql, parameters);
-
-            return affectedRows >= 1;
-        }
-
-
-
-        public bool VerwijderenEmployee(int id)
-        {
-            string sql = @"DELETE FROM Employee WHERE Id = @id";
-            
-
-            using IDbConnection db = new SqlConnection(ConnectionString);
-            var affectedRows = db.Execute(sql, new { id = id });
-
-            return affectedRows >= 1;
-        }
-
-        public bool WijzigenEmployee(Employee employee)
-        {
-            var sql = @"UPDATE Employee
-                        SET firstName = @firstName,
-                            lastName = @lastName,
-                            hireDate = @hireDate,
-                            jobId = @jobId,
-                            publisherId = @publisherId
-                        WHERE id = @id";
-
-            var parameters = new
-            {
-                @firstName = employee.FirstName,
-                @lastName = employee.LastName,
-                @hireDate = employee.HireDate,
-                @jobId = employee.JobId,
-                @publisherId = employee.PublisherId,
-                @id = employee.Id
-            };
-
-            using IDbConnection db = new SqlConnection(ConnectionString);
-            var affectedRows = db.Execute(sql, parameters);
-
-            return affectedRows >= 1;
-        }
-
-
-
-
-
     }
 }
